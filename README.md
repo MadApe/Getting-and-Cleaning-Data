@@ -2,11 +2,11 @@
 Coursework for Getting and Cleaning Data Coursera Course
 
 ## Files
-'CODEBOOK.MD' - Codebook describing the original data set, the updated data set, and how to run the analysis.
+`CODEBOOK.MD` - Codebook describing the original data set, the updated data set, and how to run the analysis.
 
-'run_analysis.R' - R code to run the analysis described in the CODEBOOK.  This file assumes that the root directory of the data set is available in the working directory.
+`run_analysis.R` - R code to run the analysis described in the `CODEBOOK`.  This file assumes that the root directory of the data set is available in the working directory.
 
-'UHC_HAR_means_analysis-tidy.txt' - The output of running 'run_analysis.R', this tidy data set aggregates a subset of variables, taking the mean of the values by Activity and Subject.
+`UHC_HAR_means_analysis-tidy.txt` - The output of running `run_analysis.R`, this tidy data set aggregates a subset of variables, taking the mean of the values by Activity and Subject.
 
 ## About The Project
 The purpose of the project is to collect the data, clean the data, analyze the data, and output a tidy data set that could be used for futher analysis in the future.
