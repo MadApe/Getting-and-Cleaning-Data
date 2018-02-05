@@ -64,13 +64,18 @@ The Tidy Data Set uses descriptive variable names determined by substituting des
 ## Transformation and Analysis
 The following describes the transformation and analysis performed on the source data set.
 
-### High Level Workflow
+### Analysis Workflow (as captured in the run_analysis.R file)
 1. Open the Test/Training data set, activities, subjects, features, and activity label files
-2. Merge the data into a single data set
-3. Extracts only the measurements on the mean and standard deviation for each measurement
-4. Apply descriptive activity names to the data set
-5. Apply descriptive names to the variables
-6. Create a second, independent tidy data set with the average of each variable for each activity and each subject
+2. `rbind` the test and training measurements data sets
+3. `rbind` the test and training subject data sets
+4. `rbind` the test and training activities data set
+5. `cbind` the combined subject, activities, and measurements data sets
+6. Subset the combined data set to only include the Activity, Subject, and the mean and standard deviation Measurement columns
+7. Rename the variable/measurement column names by substituting descriptive names for the abbreviations used in the original variable names
+8. Merge the activity labels into the combined data set on the "Activity ID"
+9. Aggregate the combined data set taking the mean of each variable column by the Activity and Subject
+10. Arrange the aggregated data by Activity, Subject, and the Average Value columns
+11. Output the tidy data set as a text file
 
 ### Setup
 1. Download the data set from the location listed above and unzip the file
@@ -79,13 +84,5 @@ The following describes the transformation and analysis performed on the source 
 ### Running The Analysis
 Executing run_analysis.R produces a file named 'UHC_HAR_means_analysis-tidy.txt' that represents a tidy data set with the average of each variable for each activity and each subject.
 
-#### Load The Needed Libraries
-`
-# load required libraries
 
-library(data.table)
 
-library(dplyr)
-
-library(tidyr)
-'
